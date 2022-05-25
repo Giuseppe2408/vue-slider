@@ -17,7 +17,7 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="slides[activeslide].image" alt="slides[activeslide].title" />
+                    <img :src="slides[activeslide].image" :alt="slides[activeslide].title" />
                     <div class="text">
                         <h3>{{slides[activeslide].title}}</h3>
                         <p>
@@ -30,7 +30,7 @@
                     <div class="prev" @click="myprev"></div>
                     <div class="next" @click="mynext"></div>
                     <div v-for="(slide, i) in slides" class="thumb" :class="i === activeslide ? 'active' : ''" :key="i">
-                        <img :src="slide.image" :alt="slide.title"/>
+                        <img :src="slide.image" @click="switchSlide(i)" :alt="slide.title"/>
                     </div>
                     <!-- <div class="thumb">
                         <img src="img/02.jpg" alt="Svizzera" />
